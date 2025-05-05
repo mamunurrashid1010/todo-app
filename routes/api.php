@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\TaskController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,5 +15,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/user', [AuthController::class, 'user']);       // Get authenticated user details
     Route::post('/logout', [AuthController::class, 'logout']);  // User logout
+
+    Route::apiResource('tasks', TaskController::class); // Tasks
 
 });
