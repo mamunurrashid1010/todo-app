@@ -63,6 +63,36 @@ php artisan migrate
 php artisan serve
 ```
 
+## Feature Tests
+```tests/Feature/AuthTest.php```
+
+#### Covers:
+
+- User registration
+
+- Login & token issuance
+
+- Accessing authenticated user profile
+
+
+```tests/Feature/TaskTest.php```
+#### Covers:
+
+- Authenticated user can create tasks
+
+- Authenticated user can view their own tasks
+
+- User cannot view others’ tasks (403 Forbidden)
+
+- Authenticated user can update their own tasks
+
+- User cannot update tasks they don't own (403 Forbidden)
+
+### Run the tests
+```
+php artisan test
+```
+
 ##  API Endpoints
 
 | Method | Endpoint        | Description                     |
